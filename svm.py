@@ -75,3 +75,9 @@ def smoSimple(dataMatIn,classLabels,C,toler,maxIter):
         else: iter = 0
         print "iteration number: %d" % iter
     return b,alphas
+
+if __name__=="__main__":
+    dataArr,labelArr = loadDataSet('testSet.txt')
+    b,alphas = smoSimple(dataArr,labelArr,0.6,0.001,40)
+    print b
+    print alphas[alphas>0]
